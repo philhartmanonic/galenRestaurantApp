@@ -1,0 +1,16 @@
+<h1> RESTAURANTS!!!!!!!</h1>
+			<% @restaurant.each do |r| %>
+<table>	
+	<th>Name</th>
+	<th>Description</th>
+	<th colspan="3">Options</th>
+		<tr>
+				<td><%= r.name %></td>
+				<td><%= r.description %></td>
+				<td><%= link_to "More Info", r %></td><br />
+				<td><%= link_to "Edit", edit_restaurant_path(r) %></td><br />
+				<td><%= link_to "Remove", r, method: :delete, data: { confirm: "Are you sure?" } %></td>
+		</tr>
+		<% end %>
+</table>
+<%= link_to "Add", new_restaurant_path %>

@@ -1,0 +1,31 @@
+<h1>Making a damn restaurant</h1>
+
+<%= form_for @restaurant, url: {action: "create"}, html: {class: "nifty form"} do |f| %>
+	<%=  field_set_tag do %>
+		<%= label_tag(:q, "Name:") %>
+		<%= f.text_field :name %>
+	<% end %>
+
+	<%=  field_set_tag do %>
+		<%= label_tag(:q, "Description:") %>
+		<%= f.text_field :description %>
+	<% end %>
+
+	<%=  field_set_tag do %>
+		<%= label_tag(:q, "Address 1:") %>
+		<%= f.text_field :address_1 %>
+	<% end %>
+
+	<%=  field_set_tag do %>
+		<%= label_tag(:q, "Address 2:") %>
+		<%= f.text_field :address_2 %>
+	<% end %>
+
+	<%=  field_set_tag do %>
+		<%= label_tag(:q, "Phone Number:") %>
+		<%= f.text_field :phone_number %>
+	<% end %>
+	<%= field_set_tag do %>
+		<%= f.submit 'Create' %>
+	<% end %>
+<% end %>
